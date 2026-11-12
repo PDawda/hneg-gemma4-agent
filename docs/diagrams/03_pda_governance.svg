@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="1000" viewBox="0 0 1460 1000" font-family="Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  <marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6d28d9"/></marker>
+  <style>
+    .t{font-size:15px;font-weight:700;fill:#0f172a}
+    .s{font-size:12.5px;fill:#334155}
+    .o{font-size:12px;fill:#b45309;font-weight:700}
+    .lab{font-size:11.5px;fill:#475569}
+    .tag{font-size:12px;font-weight:700;fill:#475569;letter-spacing:.06em}
+    .impl{fill:#e6f4f1;stroke:#0f766e;stroke-width:2}
+    .ext{fill:#f1f5f9;stroke:#64748b;stroke-width:2}
+    .prop{fill:#f5f3ff;stroke:#6d28d9;stroke-width:2;stroke-dasharray:7 5}
+    .amb{fill:#fff7ed;stroke:#b45309;stroke-width:2}
+    .ln{stroke:#475569;stroke-width:1.8;fill:none}
+    .lp{stroke:#6d28d9;stroke-width:1.8;fill:none;stroke-dasharray:6 4}
+    .card{fill:#ffffff;stroke:#e2e8f0}
+    .ct{font-size:16px;font-weight:700}
+    .cs{font-size:13.5px;fill:#334155}
+  </style>
+</defs><rect width="1460" height="1000" fill="#f8fafc"/>
+<text class="tag" x="30" y="34" text-anchor="start" >H-NEG × GEMMA 4   /   03</text>
+<text x="30" y="72" font-size="30" font-weight="800" fill="#0f172a">Hierarchical Enclosure: PDA Stack Governance</text>
+<text x="30" y="100" font-size="15" fill="#475569">Three control loops with explicit PUSH / POP. Implemented in src/state_machine.py; runs in the full configuration.</text>
+<rect x="1250" y="18" width="180" height="30" rx="15" fill="#e6f4f1" stroke="#0f766e" stroke-dasharray="4 3"/>
+<text x="1340.0" y="38" text-anchor="middle" font-size="12.5" font-weight="800" fill="#0f766e" letter-spacing=".08em">IMPLEMENTED</text>
+<rect x="20" y="120" width="1420" height="600" rx="12" fill="#ffffff" stroke="#e2e8f0"/>
+<rect class="impl" x="510" y="140" width="440" height="66" rx="6"/>
+<text class="t" x="730.0" y="169.5" text-anchor="middle" >H-NEG hierarchical statechart</text>
+<text class="s" x="730.0" y="186.5" text-anchor="middle" >Sₜ = ⟨phase, file, AST node, depth⟩</text>
+<rect class="impl" x="100" y="250" width="360" height="46" rx="6"/>
+<text class="t" x="280.0" y="278.0" text-anchor="middle" >LOOP 1 · REFLEX  (per candidate)</text>
+<rect class="impl" x="550" y="250" width="360" height="46" rx="6"/>
+<text class="t" x="730.0" y="278.0" text-anchor="middle" >LOOP 2 · BOUNDED RECOVERY  (per bug)</text>
+<rect class="impl" x="1000" y="250" width="360" height="46" rx="6"/>
+<text class="t" x="1180.0" y="278.0" text-anchor="middle" >LOOP 3 · OFFLINE CALIBRATION  (after run)</text>
+<polyline class="ln" points="620,206 280,248" marker-end="url(#a)"/>
+<polyline class="ln" points="730,206 730,248" marker-end="url(#a)"/>
+<polyline class="ln" points="840,206 1180,248" marker-end="url(#a)"/>
+<rect class="impl" x="100" y="330" width="360" height="80" rx="6"/>
+<text class="t" x="280.0" y="358.0" text-anchor="middle" >AST parse + CPG name scope</text>
+<text class="s" x="280.0" y="375.0" text-anchor="middle" >in memory, before any test runs</text>
+<text class="s" x="280.0" y="393.0" text-anchor="middle" >latency logged against a 50 ms budget</text>
+<rect class="impl" x="100" y="440" width="360" height="60" rx="6"/>
+<text class="t" x="280.0" y="466.5" text-anchor="middle" >fail → diagnostic to Loop 2</text>
+<text class="s" x="280.0" y="483.5" text-anchor="middle" >pass → tests (Loop 2)</text>
+<polyline class="ln" points="280,296 280,328" marker-end="url(#a)"/>
+<polyline class="ln" points="280,410 280,438" marker-end="url(#a)"/>
+<polyline class="ln" points="460,470 548,470" marker-end="url(#a)"/>
+<rect class="impl" x="550" y="326" width="360" height="74" rx="6"/>
+<text class="t" x="730.0" y="351.0" text-anchor="middle" >Apply edit → tests</text>
+<text class="s" x="730.0" y="368.0" text-anchor="middle" >fresh repo copy · 300 s timeout</text>
+<text class="s" x="730.0" y="386.0" text-anchor="middle" >pass → RESOLVED (episode ends)</text>
+<rect class="impl" x="550" y="420" width="360" height="80" rx="6"/>
+<text class="t" x="730.0" y="448.0" text-anchor="middle" >k ← k + 1   (K = 3, incl. first)</text>
+<text class="s" x="730.0" y="465.0" text-anchor="middle" >only the latest diagnostic kept</text>
+<text class="s" x="730.0" y="483.0" text-anchor="middle" >replay guard updated</text>
+<polyline class="ln" points="730,296 730,324" marker-end="url(#a)"/>
+<polyline class="ln" points="730,400 730,418" marker-end="url(#a)"/>
+<text class="lab" x="738" y="413" text-anchor="start" >fail</text>
+<rect class="impl" x="530" y="540" width="190" height="70" rx="6"/>
+<text class="t" x="625.0" y="571.5" text-anchor="middle" >CODE_EDIT</text>
+<text class="s" x="625.0" y="588.5" text-anchor="middle" >parent frame (k &lt; K)</text>
+<rect class="impl" x="740" y="540" width="190" height="70" rx="6"/>
+<text class="t" x="835.0" y="571.5" text-anchor="middle" >GRACEFUL_HALT</text>
+<text class="s" x="835.0" y="588.5" text-anchor="middle" >unresolved at k = K</text>
+<polyline class="ln" points="680,500 630,538" marker-end="url(#a)"/>
+<polyline class="ln" points="780,500 830,538" marker-end="url(#a)"/>
+<rect class="amb" x="530" y="640" width="190" height="66" rx="6"/>
+<text class="t" x="625.0" y="669.5" text-anchor="middle" >RESOLVE_DEP</text>
+<text class="s" x="625.0" y="686.5" text-anchor="middle" >child frame, depth ≤ 4</text>
+<polyline class="ln" points="585,610 585,638" marker-end="url(#a)"/>
+<text class="lab" x="545" y="628" text-anchor="start" >PUSH</text>
+<polyline class="ln" points="665,640 665,612" marker-end="url(#a)"/>
+<text class="lab" x="672" y="628" text-anchor="start" >POP</text>
+<text class="o" x="740" y="666" text-anchor="start" >PUSH / POP implemented + unit-tested;</text>
+<text class="o" x="740" y="684" text-anchor="start" >not triggered in the runs (max depth 0)</text>
+<rect class="impl" x="1000" y="330" width="360" height="80" rx="6"/>
+<text class="t" x="1180.0" y="358.0" text-anchor="middle" >calibrate_from_traces</text>
+<text class="s" x="1180.0" y="375.0" text-anchor="middle" >halt reasons, attempts to success,</text>
+<text class="s" x="1180.0" y="393.0" text-anchor="middle" >observed stack depth</text>
+<rect class="impl" x="1000" y="440" width="360" height="70" rx="6"/>
+<text class="t" x="1180.0" y="471.5" text-anchor="middle" >Recommended K, stack depth</text>
+<text class="s" x="1180.0" y="488.5" text-anchor="middle" >applied manually · future runs only</text>
+<polyline class="ln" points="1180,296 1180,328" marker-end="url(#a)"/>
+<polyline class="ln" points="1180,410 1180,438" marker-end="url(#a)"/>
+<polyline class="ln" points="930,575 1180,575 1180,512" marker-end="url(#a)"/>
+<text class="lab" x="1000" y="568" text-anchor="start" >statechart traces</text>
+<rect class="card" x="20.0" y="740" width="460.0" height="140" rx="10"/>
+<rect x="20.0" y="740" width="460.0" height="5" rx="2" fill="#0f766e"/>
+<text class="ct" x="38.0" y="772" fill="#0f766e">Loop 1 · Reflex</text>
+<text class="cs" x="38.0" y="796" text-anchor="start" >AST parse and CPG name-scope check under the active</text>
+<text class="cs" x="38.0" y="815" text-anchor="start" >frame&#x27;s file, in memory. Latency is logged against a</text>
+<text class="cs" x="38.0" y="834" text-anchor="start" >50 ms budget (not guaranteed). No schema check.</text>
+<rect class="card" x="500.0" y="740" width="460.0" height="140" rx="10"/>
+<rect x="500.0" y="740" width="460.0" height="5" rx="2" fill="#b45309"/>
+<text class="ct" x="518.0" y="772" fill="#b45309">Loop 2 · Convergence</text>
+<text class="cs" x="518.0" y="796" text-anchor="start" >Bounded retries: k ≤ K = 3 including the first attempt;</text>
+<text class="cs" x="518.0" y="815" text-anchor="start" >only the latest diagnostic stays in context. PUSH a</text>
+<text class="cs" x="518.0" y="834" text-anchor="start" >dependency frame, POP to resume; depth ≤ δ_max = 4.</text>
+<rect class="card" x="980.0" y="740" width="460.0" height="140" rx="10"/>
+<rect x="980.0" y="740" width="460.0" height="5" rx="2" fill="#6d28d9"/>
+<text class="ct" x="998.0" y="772" fill="#6d28d9">Loop 3 · Calibration</text>
+<text class="cs" x="998.0" y="796" text-anchor="start" >Reads completed traces offline and recommends K and</text>
+<text class="cs" x="998.0" y="815" text-anchor="start" >stack depth. Applied manually to future runs;</text>
+<text class="cs" x="998.0" y="834" text-anchor="start" >never changes model weights.</text>
+<rect x="20" y="895" width="1420" height="40" fill="#eef2f7"/>
+<rect x="20" y="895" width="4" height="40" fill="#64748b"/>
+<text class="cs" x="38" y="920" text-anchor="start" >K counts every candidate, including the first. A pass on the K-th attempt counts as resolved; unresolved at k = K → GRACEFUL_HALT.</text>
+<rect class="impl" x="30" y="950" width="30" height="16" rx="3"/>
+<text class="s" x="68" y="963" text-anchor="start" >Implemented and exercised in the Kaggle runs</text>
+<rect class="amb" x="360" y="950" width="30" height="16" rx="3"/>
+<text class="s" x="398" y="963" text-anchor="start" >Implemented, not exercised in the runs</text>
+<rect class="prop" x="660" y="950" width="30" height="16" rx="3"/>
+<text class="s" x="698" y="963" text-anchor="start" >Proposed, not implemented</text>
+<rect class="ext" x="900" y="950" width="30" height="16" rx="3"/>
+<text class="s" x="938" y="963" text-anchor="start" >External / unmodified (Gemma 4, llama.cpp)</text>
+<text x="30" y="986" font-size="12.5" fill="#0f172a">Measured (Gemma 4 E4B, n = 20): K-bound held on every bug; GRACEFUL_HALT on 20/20 unresolved bugs (C2 verified).</text>
+</svg>

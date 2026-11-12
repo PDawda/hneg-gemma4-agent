@@ -1,0 +1,31 @@
+# Core inference
+torch>=2.3
+transformers>=4.50
+accelerate>=0.30
+safetensors>=0.4
+
+# Quantized checkpoints (w4a16 / QAT compressed-tensors)
+compressed-tensors>=0.9
+
+# GGUF sandbox (gemma-4-E4B-it-Q4_K_M.gguf) via llama.cpp
+# needs a llama-cpp-python release whose bundled llama.cpp supports Gemma 4
+llama-cpp-python>=0.3.36
+huggingface_hub>=0.23
+
+# Code Property Graph / AST extraction
+tree-sitter>=0.23
+tree-sitter-language-pack>=0.2
+
+# Config, data, experiments
+pyyaml>=6.0
+numpy>=1.26
+pandas>=2.1
+tqdm>=4.66
+datasets>=2.19        # experiments/prepare_tasks.py
+
+# Tests
+pytest>=8.0
+
+# Notebook
+jupyter>=1.0
+ipykernel>=6.29

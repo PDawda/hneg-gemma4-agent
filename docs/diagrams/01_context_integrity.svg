@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="930" viewBox="0 0 1460 930" font-family="Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  <marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6d28d9"/></marker>
+  <style>
+    .t{font-size:15px;font-weight:700;fill:#0f172a}
+    .s{font-size:12.5px;fill:#334155}
+    .o{font-size:12px;fill:#b45309;font-weight:700}
+    .lab{font-size:11.5px;fill:#475569}
+    .tag{font-size:12px;font-weight:700;fill:#475569;letter-spacing:.06em}
+    .impl{fill:#e6f4f1;stroke:#0f766e;stroke-width:2}
+    .ext{fill:#f1f5f9;stroke:#64748b;stroke-width:2}
+    .prop{fill:#f5f3ff;stroke:#6d28d9;stroke-width:2;stroke-dasharray:7 5}
+    .amb{fill:#fff7ed;stroke:#b45309;stroke-width:2}
+    .ln{stroke:#475569;stroke-width:1.8;fill:none}
+    .lp{stroke:#6d28d9;stroke-width:1.8;fill:none;stroke-dasharray:6 4}
+    .card{fill:#ffffff;stroke:#e2e8f0}
+    .ct{font-size:16px;font-weight:700}
+    .cs{font-size:13.5px;fill:#334155}
+  </style>
+</defs><rect width="1460" height="930" fill="#f8fafc"/>
+<text class="tag" x="30" y="34" text-anchor="start" >H-NEG × GEMMA 4   /   01</text>
+<text x="30" y="72" font-size="30" font-weight="800" fill="#0f172a">Context Integrity: Snapshot Binding → Embedding Injection</text>
+<text x="30" y="100" font-size="15" fill="#475569">The repository snapshot and its code property graph are implemented and drive masking and the reflex check today. Injecting them as embedding vectors is proposed.</text>
+<rect x="1130" y="18" width="300" height="30" rx="15" fill="#e6f4f1" stroke="#0f766e" stroke-dasharray="4 3"/>
+<text x="1280.0" y="38" text-anchor="middle" font-size="12.5" font-weight="800" fill="#0f766e" letter-spacing=".08em">IMPLEMENTED + PROPOSED</text>
+<rect x="20" y="120" width="1420" height="500" rx="12" fill="#ffffff" stroke="#e2e8f0"/>
+<text class="tag" x="40" y="146" text-anchor="start" >IMPLEMENTED · USED IN EVERY RUN</text>
+<rect class="impl" x="40" y="160" width="250" height="90" rx="6"/>
+<text class="t" x="165.0" y="193.0" text-anchor="middle" >Repository checkout</text>
+<text class="s" x="165.0" y="210.0" text-anchor="middle" >frozen per task</text>
+<text class="s" x="165.0" y="228.0" text-anchor="middle" >(copied fresh for each test run)</text>
+<rect class="impl" x="330" y="160" width="310" height="90" rx="6"/>
+<text class="t" x="485.0" y="193.0" text-anchor="middle" >CPG builder</text>
+<text class="s" x="485.0" y="210.0" text-anchor="middle" >ast (Python) + tree-sitter (others)</text>
+<text class="s" x="485.0" y="228.0" text-anchor="middle" >defs · params · exports · imports · calls</text>
+<rect class="impl" x="680" y="160" width="300" height="90" rx="6"/>
+<text class="t" x="830.0" y="193.0" text-anchor="middle" >Context contract</text>
+<text class="s" x="830.0" y="210.0" text-anchor="middle" >SR_id = hash(file, content hash)</text>
+<text class="s" x="830.0" y="228.0" text-anchor="middle" >recorded with every result</text>
+<rect class="impl" x="1040" y="140" width="380" height="56" rx="6"/>
+<text class="t" x="1230.0" y="164.5" text-anchor="middle" >Scope allowlist → logit mask</text>
+<text class="s" x="1230.0" y="181.5" text-anchor="middle" >Figure 02 (static_mask, full)</text>
+<rect class="impl" x="1040" y="214" width="380" height="56" rx="6"/>
+<text class="t" x="1230.0" y="238.5" text-anchor="middle" >Scope allowlist → Loop 1 reflex</text>
+<text class="s" x="1230.0" y="255.5" text-anchor="middle" >Figure 03 (reflex_only, static_mask, full)</text>
+<polyline class="ln" points="290,205 328,205" marker-end="url(#a)"/>
+<polyline class="ln" points="640,205 678,205" marker-end="url(#a)"/>
+<polyline class="ln" points="980,195 1010,195 1010,168 1038,168" marker-end="url(#a)"/>
+<polyline class="ln" points="980,215 1010,215 1010,242 1038,242" marker-end="url(#a)"/>
+<line x1="40" y1="300" x2="1420" y2="300" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4 4"/>
+<text class="tag" x="40" y="326" text-anchor="start" >PROPOSED · VECTOR-LEVEL CONTEXT (NOT IMPLEMENTED)</text>
+<rect class="prop" x="680" y="345" width="300" height="90" rx="6"/>
+<text class="t" x="830.0" y="378.0" text-anchor="middle" >CPG feature encoder</text>
+<text class="s" x="830.0" y="395.0" text-anchor="middle" >+ dimension-matched projection</text>
+<text class="s" x="830.0" y="413.0" text-anchor="middle" >needs a training objective</text>
+<polyline class="lp" points="830,250 830,343" marker-end="url(#ap)"/>
+<rect class="prop" x="1040" y="395" width="380" height="90" rx="6"/>
+<text class="t" x="1230.0" y="428.0" text-anchor="middle" >Vector adapter</text>
+<text class="s" x="1230.0" y="445.0" text-anchor="middle" >e′ᵢ = eᵢ + Δeᵢ</text>
+<text class="s" x="1230.0" y="463.0" text-anchor="middle" >token IDs unchanged, embedding table untouched</text>
+<polyline class="lp" points="980,390 1010,390 1010,420 1038,420" marker-end="url(#ap)"/>
+<text class="lab" x="1016" y="410" text-anchor="start" >Δeᵢ</text>
+<rect class="ext" x="40" y="470" width="250" height="70" rx="6"/>
+<text class="t" x="165.0" y="501.5" text-anchor="middle" >Token IDs</text>
+<text class="s" x="165.0" y="518.5" text-anchor="middle" >prompt tokens (unchanged)</text>
+<rect class="ext" x="330" y="470" width="310" height="70" rx="6"/>
+<text class="t" x="485.0" y="501.5" text-anchor="middle" >Token embedding lookup</text>
+<text class="s" x="485.0" y="518.5" text-anchor="middle" >eᵢ (Gemma 4, unmodified)</text>
+<polyline class="ln" points="290,505 328,505" marker-end="url(#a)"/>
+<polyline class="lp" points="640,490 1000,490 1000,465 1038,465" marker-end="url(#ap)"/>
+<text class="lab" x="860" y="482" text-anchor="start" >proposed path</text>
+<rect class="ext" x="1040" y="525" width="380" height="76" rx="6"/>
+<text class="t" x="1230.0" y="559.5" text-anchor="middle" >Gemma 4 decoder (unmodified weights)</text>
+<text class="s" x="1230.0" y="576.5" text-anchor="middle" >run: E4B / E2B GGUF · targets: 31B / 26B-A4B</text>
+<polyline class="lp" points="1230,485 1230,523" marker-end="url(#ap)"/>
+<polyline class="ln" points="640,520 700,520 700,563 1038,563" marker-end="url(#a)"/>
+<text class="lab" x="712" y="556" text-anchor="start" >today: embeddings go straight to the decoder</text>
+<rect class="card" x="20.0" y="645" width="460.0" height="150" rx="10"/>
+<rect x="20.0" y="645" width="460.0" height="5" rx="2" fill="#0f766e"/>
+<text class="ct" x="38.0" y="677" fill="#0f766e">Implemented: snapshot binding</text>
+<text class="cs" x="38.0" y="701" text-anchor="start" >The CPG is built per task; SR_id hashes every file</text>
+<text class="cs" x="38.0" y="720" text-anchor="start" >and its content hash and is stored with each result.</text>
+<text class="cs" x="38.0" y="739" text-anchor="start" >Its allowlist drives the logit mask and the reflex</text>
+<text class="cs" x="38.0" y="758" text-anchor="start" >check (Figures 02 and 03).</text>
+<rect class="card" x="500.0" y="645" width="460.0" height="150" rx="10"/>
+<rect x="500.0" y="645" width="460.0" height="5" rx="2" fill="#6d28d9"/>
+<text class="ct" x="518.0" y="677" fill="#6d28d9">Proposed: vector intervention</text>
+<text class="cs" x="518.0" y="701" text-anchor="start" >e′ᵢ = eᵢ + Δeᵢ: an encoder projects CPG evidence</text>
+<text class="cs" x="518.0" y="720" text-anchor="start" >into the embedding space. Token IDs and the</text>
+<text class="cs" x="518.0" y="739" text-anchor="start" >pretrained embedding table stay unchanged.</text>
+<text class="cs" x="518.0" y="758" text-anchor="start" >Needs training and validation; none exists yet.</text>
+<rect class="card" x="980.0" y="645" width="460.0" height="150" rx="10"/>
+<rect x="980.0" y="645" width="460.0" height="5" rx="2" fill="#b45309"/>
+<text class="ct" x="998.0" y="677" fill="#b45309">Open questions</text>
+<text class="cs" x="998.0" y="701" text-anchor="start" >• Training data and objective for the encoder</text>
+<text class="cs" x="998.0" y="720" text-anchor="start" >• Whether 31B / 26B-A4B have per-layer embeddings</text>
+<text class="cs" x="998.0" y="739" text-anchor="start" >  (check the Gemma 4 technical report)</text>
+<text class="cs" x="998.0" y="758" text-anchor="start" >• SR_id is recorded, not yet re-checked per attempt</text>
+<rect x="20" y="815" width="1420" height="40" fill="#eef2f7"/>
+<rect x="20" y="815" width="4" height="40" fill="#64748b"/>
+<text class="cs" x="38" y="840" text-anchor="start" >Implemented: CPG and SR_id, used for masking and the reflex check in every run. Proposed: feature encoder, vector adapter and their training — not implemented, not measured.</text>
+<rect class="impl" x="30" y="875" width="30" height="16" rx="3"/>
+<text class="s" x="68" y="888" text-anchor="start" >Implemented and exercised in the Kaggle runs</text>
+<rect class="amb" x="360" y="875" width="30" height="16" rx="3"/>
+<text class="s" x="398" y="888" text-anchor="start" >Implemented, not exercised in the runs</text>
+<rect class="prop" x="660" y="875" width="30" height="16" rx="3"/>
+<text class="s" x="698" y="888" text-anchor="start" >Proposed, not implemented</text>
+<rect class="ext" x="900" y="875" width="30" height="16" rx="3"/>
+<text class="s" x="938" y="888" text-anchor="start" >External / unmodified (Gemma 4, llama.cpp)</text>
+<text x="30" y="910" font-size="12.5" fill="#0f172a">Source: src/cpg_parser.py (CodePropertyGraph, sr_id, symbol_allowlist). No measurement of the proposed adapter exists.</text>
+</svg>

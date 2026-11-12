@@ -1,0 +1,68 @@
+{
+  "created": "2026-11-12 03:19:26 UTC",
+  "backend": "gguf",
+  "model": "gemma-4-E4B-it-Q4_K_M.gguf",
+  "configs": [
+    "baseline",
+    "baseline_k3",
+    "reflex_only",
+    "static_mask",
+    "full"
+  ],
+  "n_tasks": 20,
+  "task_ids_sha256": "4be1f94b78ccc176",
+  "code_sha256": "411d9fd39892a989",
+  "governance": {
+    "max_convergence_retries": 3,
+    "max_pda_stack_depth": 4,
+    "strict_mode": true,
+    "enable_graceful_halt": true
+  },
+  "symbolic_engine": {
+    "inline_cfg_masking": true,
+    "trie_prefix_exclusion": true,
+    "cpg_dependency_check": true,
+    "reflex_latency_cap_ms": 50,
+    "trie_min_prefix_len": 8,
+    "logit_softcap": null
+  },
+  "args": {
+    "tasks": "/kaggle/working/tasks.jsonl",
+    "config_file": "/kaggle/working/hneg-gemma4-agent/hneg_config.yaml",
+    "configs": [
+      "baseline",
+      "baseline_k3",
+      "reflex_only",
+      "static_mask",
+      "full"
+    ],
+    "model": null,
+    "backend": "gguf",
+    "gguf_path": null,
+    "gguf_repo": "unsloth/gemma-4-E4B-it-GGUF",
+    "gguf_file": "gemma-4-E4B-it-Q4_K_M.gguf",
+    "n_gpu_layers": -1,
+    "n_ctx": 32768,
+    "offset": 0,
+    "limit": null,
+    "time_budget_hours": 10.0,
+    "max_turns": 10,
+    "max_new_tokens": 1024,
+    "patch_format": "edit",
+    "context_chars": 24000,
+    "temperature": 0.0,
+    "test_timeout": 300,
+    "out_dir": "/kaggle/working/results_E4B_411d9fd39892a989",
+    "trace_dir": "/kaggle/working/traces_E4B_411d9fd39892a989",
+    "ablation_csv": null
+  },
+  "python": "3.13.16",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "git_commit": null,
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "llama_cpp_python": "0.3.36",
+  "model_path": "/kaggle/tmp/hf/hub/models--unsloth--gemma-4-E4B-it-GGUF/snapshots/bfc15c382204943c3a8fff0c750b94ae2364d7a3/gemma-4-E4B-it-Q4_K_M.gguf",
+  "model_sha256": "85a896a047553e842f25297ee5b031d64ff30147d9c4af17b1e4b394cd1fab87",
+  "n_ctx": 32768
+}

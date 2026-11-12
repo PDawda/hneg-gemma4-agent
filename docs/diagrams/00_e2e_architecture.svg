@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="1010" viewBox="0 0 1460 1010" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6d28d9"/>
+    </marker>
+    <style>
+      .t{font-size:15px;font-weight:700;fill:#0f172a}
+      .s{font-size:12.5px;fill:#334155}
+      .lane{font-size:12px;font-weight:700;fill:#475569;letter-spacing:.06em}
+      .lab{font-size:11.5px;fill:#475569}
+      .impl{fill:#e6f4f1;stroke:#0f766e;stroke-width:2}
+      .ext{fill:#f1f5f9;stroke:#64748b;stroke-width:2}
+      .prop{fill:#f5f3ff;stroke:#6d28d9;stroke-width:2;stroke-dasharray:7 5}
+      .ln{stroke:#475569;stroke-width:1.8;fill:none}
+      .lp{stroke:#6d28d9;stroke-width:1.8;fill:none;stroke-dasharray:6 4}
+      .amber{font-size:12px;fill:#b45309;font-weight:700}
+    </style>
+  </defs>
+  <rect width="1460" height="1010" fill="#f8fafc"/>
+
+  <text x="30" y="42" font-size="24" font-weight="800" fill="#0f172a">H-NEG × Gemma 4 · End-to-End Architecture (implemented + proposed)</text>
+  <text x="30" y="68" font-size="14" fill="#475569">One repair episode per bug and configuration. Prompt and code excerpt are identical for all five configurations; only the governance layers differ.</text>
+
+  <!-- lane bands -->
+  <rect x="20" y="100" width="1420" height="160" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="20" y="275" width="1420" height="205" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="20" y="495" width="1420" height="240" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="20" y="750" width="1420" height="135" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+  <text class="lane" x="34" y="152">A · INPUTS &amp;</text><text class="lane" x="34" y="168">CONTEXT</text><text class="lab" x="34" y="186">per task</text>
+  <text class="lane" x="34" y="300">B · MICRO-</text><text class="lane" x="34" y="316">GOVERNANCE</text><text class="lab" x="34" y="334">per token</text>
+  <text class="lane" x="34" y="520">C · MACRO-</text><text class="lane" x="34" y="536">GOVERNANCE</text><text class="lab" x="34" y="554">per attempt</text>
+  <text class="lane" x="34" y="800">D · EVIDENCE &amp;</text><text class="lane" x="34" y="816">CALIBRATION</text><text class="lab" x="34" y="834">after the run</text>
+
+  <!-- Lane A -->
+  <rect class="impl" x="190" y="140" width="210" height="80" rx="6"/>
+  <text class="t" x="295" y="172" text-anchor="middle">SWE-bench Lite task</text>
+  <text class="s" x="295" y="192" text-anchor="middle">validated: tests fail before,</text>
+  <text class="s" x="295" y="208" text-anchor="middle">pass with the official fix</text>
+
+  <rect class="impl" x="420" y="140" width="180" height="80" rx="6"/>
+  <text class="t" x="510" y="172" text-anchor="middle">Code excerpt</text>
+  <text class="s" x="510" y="192" text-anchor="middle">header + definitions</text>
+  <text class="s" x="510" y="208" text-anchor="middle">named in the issue</text>
+
+  <rect class="impl" x="630" y="140" width="200" height="80" rx="6"/>
+  <text class="t" x="730" y="172" text-anchor="middle">Prompt</text>
+  <text class="s" x="730" y="192" text-anchor="middle">issue + excerpt +</text>
+  <text class="s" x="730" y="208" text-anchor="middle">SEARCH/REPLACE format</text>
+
+  <rect class="impl" x="860" y="140" width="260" height="80" rx="6"/>
+  <text class="t" x="990" y="172" text-anchor="middle">Repo snapshot → CPG</text>
+  <text class="s" x="990" y="192" text-anchor="middle">ast + tree-sitter symbols</text>
+  <text class="s" x="990" y="208" text-anchor="middle">SR_id hash, recorded per result</text>
+
+  <rect class="prop" x="1150" y="140" width="270" height="80" rx="6"/>
+  <text class="t" x="1285" y="172" text-anchor="middle">CPG embedding adapter</text>
+  <text class="s" x="1285" y="192" text-anchor="middle">e′ᵢ = eᵢ + Δeᵢ (needs training)</text>
+  <text class="s" x="1285" y="208" text-anchor="middle">→ Diagram 01</text>
+
+  <line class="ln" x1="400" y1="180" x2="418" y2="180" marker-end="url(#a)"/>
+  <line class="ln" x1="600" y1="180" x2="628" y2="180" marker-end="url(#a)"/>
+  <polyline class="ln" points="295,140 295,118 990,118 990,138" marker-end="url(#a)"/>
+  <text class="lab" x="640" y="113">repository checkout</text>
+  <line class="lp" x1="1120" y1="180" x2="1148" y2="180" marker-end="url(#ap)"/>
+
+  <!-- Lane B -->
+  <rect class="prop" x="190" y="320" width="300" height="80" rx="6"/>
+  <text class="t" x="340" y="352" text-anchor="middle">MTP drafter, masked speculation</text>
+  <text class="s" x="340" y="372" text-anchor="middle">same mask on draft + target logits</text>
+  <text class="s" x="340" y="388" text-anchor="middle">→ Diagram 02</text>
+  <line class="lp" x1="490" y1="360" x2="628" y2="360" marker-end="url(#ap)"/>
+
+  <rect class="ext" x="630" y="320" width="200" height="80" rx="6"/>
+  <text class="t" x="730" y="352" text-anchor="middle">Gemma 4 decoder</text>
+  <text class="s" x="730" y="372" text-anchor="middle">llama.cpp GGUF (E4B, E2B run)</text>
+  <text class="s" x="730" y="388" text-anchor="middle">31B via HF path (not run)</text>
+
+  <rect class="impl" x="880" y="312" width="330" height="96" rx="6"/>
+  <text class="t" x="1045" y="338" text-anchor="middle">H-NEG logits processor · z̃ = z + Mₜ</text>
+  <text class="s" x="1045" y="358" text-anchor="middle">CPG identifier-scope gate (static_mask, full)</text>
+  <text class="s" x="1045" y="376" text-anchor="middle">edit-level replay guard (full)</text>
+  <text class="s" x="1045" y="396" text-anchor="middle">dead end: drop replay rule → EOS only</text>
+
+  <rect class="prop" x="880" y="425" width="330" height="40" rx="6"/>
+  <text class="s" x="1045" y="450" text-anchor="middle">CFG grammar gate (SynCode / XGrammar) → Diagram 02</text>
+  <line class="lp" x1="1045" y1="425" x2="1045" y2="410" marker-end="url(#ap)"/>
+
+  <rect class="impl" x="1240" y="320" width="180" height="80" rx="6"/>
+  <text class="t" x="1330" y="352" text-anchor="middle">Greedy token → reply</text>
+  <text class="s" x="1330" y="372" text-anchor="middle">SEARCH/REPLACE edit</text>
+  <text class="s" x="1330" y="388" text-anchor="middle">blocks</text>
+
+  <line class="ln" x1="730" y1="220" x2="730" y2="318" marker-end="url(#a)"/>
+  <line class="ln" x1="830" y1="360" x2="878" y2="360" marker-end="url(#a)"/>
+  <text class="lab" x="836" y="352">logits</text>
+  <line class="ln" x1="990" y1="220" x2="990" y2="310" marker-end="url(#a)"/>
+  <text class="lab" x="996" y="250">allowlist</text>
+  <polyline class="lp" points="1285,220 1285,292 800,292 800,318" marker-end="url(#ap)"/>
+  <line class="ln" x1="1210" y1="360" x2="1238" y2="360" marker-end="url(#a)"/>
+
+  <!-- Lane C -->
+  <rect class="impl" x="1240" y="530" width="180" height="75" rx="6"/>
+  <text class="t" x="1330" y="560" text-anchor="middle">Parse + apply edit</text>
+  <text class="s" x="1330" y="580" text-anchor="middle">exact → whitespace →</text>
+  <text class="s" x="1330" y="596" text-anchor="middle">unique fuzzy match</text>
+
+  <rect class="impl" x="1010" y="530" width="200" height="75" rx="6"/>
+  <text class="t" x="1110" y="560" text-anchor="middle">Loop 1 · Reflex</text>
+  <text class="s" x="1110" y="580" text-anchor="middle">AST parse + CPG scope</text>
+  <text class="s" x="1110" y="596" text-anchor="middle">in memory, latency logged</text>
+
+  <rect class="impl" x="780" y="530" width="200" height="75" rx="6"/>
+  <text class="t" x="880" y="560" text-anchor="middle">Tests</text>
+  <text class="s" x="880" y="580" text-anchor="middle">fresh repo copy,</text>
+  <text class="s" x="880" y="596" text-anchor="middle">timeout 300 s</text>
+
+  <rect class="impl" x="530" y="530" width="190" height="75" rx="6"/>
+  <text class="t" x="625" y="562" text-anchor="middle">RESOLVED</text>
+  <text class="s" x="625" y="584" text-anchor="middle">target tests pass</text>
+
+  <rect class="impl" x="780" y="630" width="430" height="88" rx="6"/>
+  <text class="t" x="995" y="655" text-anchor="middle">Loop 2 · Pushdown statechart (full)</text>
+  <text class="s" x="995" y="675" text-anchor="middle">k ← k+1 · only the latest diagnostic kept · replay guard updated</text>
+  <text class="amber" x="995" y="697" text-anchor="middle">PUSH / POP dependency frames, depth ≤ 4</text>
+  <text class="amber" x="995" y="712" text-anchor="middle" font-weight="400">(implemented + unit-tested; not triggered in the runs)</text>
+
+  <rect class="impl" x="1240" y="650" width="180" height="68" rx="6"/>
+  <text class="t" x="1330" y="678" text-anchor="middle">GRACEFUL_HALT</text>
+  <text class="s" x="1330" y="698" text-anchor="middle">unresolved at k = K = 3</text>
+
+  <line class="ln" x1="1330" y1="400" x2="1330" y2="528" marker-end="url(#a)"/>
+  <line class="ln" x1="1240" y1="560" x2="1212" y2="560" marker-end="url(#a)"/>
+  <line class="ln" x1="1010" y1="560" x2="982" y2="560" marker-end="url(#a)"/>
+  <line class="ln" x1="780" y1="560" x2="722" y2="560" marker-end="url(#a)"/>
+  <text class="lab" x="738" y="552">pass</text>
+  <line class="ln" x1="880" y1="605" x2="880" y2="628" marker-end="url(#a)"/>
+  <line class="ln" x1="1110" y1="605" x2="1110" y2="628" marker-end="url(#a)"/>
+  <line class="ln" x1="1270" y1="605" x2="1214" y2="640" marker-end="url(#a)"/>
+  <text class="lab" x="1048" y="622">fail</text><text class="lab" x="886" y="622">fail</text><text class="lab" x="1246" y="632">fail</text>
+  <line class="ln" x1="1210" y1="690" x2="1238" y2="690" marker-end="url(#a)"/>
+  <text class="lab" x="1213" y="683">k=K</text>
+  <polyline class="ln" points="780,680 176,680 176,264 680,264 680,222" marker-end="url(#a)"/>
+  <text class="lab" x="200" y="672">k &lt; K: retry with the latest diagnostic (baseline: full transcript, up to 10 turns)</text>
+
+  <!-- Lane D -->
+  <rect class="impl" x="190" y="785" width="360" height="80" rx="6"/>
+  <text class="t" x="370" y="815" text-anchor="middle">Evidence logs</text>
+  <text class="s" x="370" y="835" text-anchor="middle">attempts JSONL · per-bug CSV · run_meta</text>
+  <text class="s" x="370" y="851" text-anchor="middle">(model SHA-256, code fingerprint, task-set hash)</text>
+
+  <rect class="impl" x="580" y="785" width="260" height="80" rx="6"/>
+  <text class="t" x="710" y="815" text-anchor="middle">savings_report.py</text>
+  <text class="s" x="710" y="835" text-anchor="middle">ablation table, tail cost, ROI</text>
+  <text class="s" x="710" y="851" text-anchor="middle">paired bootstrap 95% CIs</text>
+
+  <rect class="impl" x="870" y="785" width="250" height="80" rx="6"/>
+  <text class="t" x="995" y="815" text-anchor="middle">verify_claims.py</text>
+  <text class="s" x="995" y="835" text-anchor="middle">C1–C10: verified / not</text>
+  <text class="s" x="995" y="851" text-anchor="middle">supported / inconclusive</text>
+
+  <rect class="impl" x="1150" y="785" width="270" height="80" rx="6"/>
+  <text class="t" x="1285" y="815" text-anchor="middle">Loop 3 · Offline calibration</text>
+  <text class="s" x="1285" y="835" text-anchor="middle">recommends K, stack depth</text>
+  <text class="s" x="1285" y="851" text-anchor="middle">applied manually, future runs only</text>
+
+  <polyline class="ln" points="900,718 900,762 370,762 370,783" marker-end="url(#a)"/>
+  <text class="lab" x="560" y="757">every attempt and outcome logged</text>
+  <polyline class="ln" points="1150,718 1150,762 1285,762 1285,783" marker-end="url(#a)"/>
+  <text class="lab" x="1160" y="757">statechart traces</text>
+  <line class="ln" x1="550" y1="825" x2="578" y2="825" marker-end="url(#a)"/>
+  <line class="ln" x1="840" y1="825" x2="868" y2="825" marker-end="url(#a)"/>
+
+  <!-- legend -->
+  <rect class="impl" x="30" y="905" width="34" height="18" rx="3"/>
+  <text class="s" x="72" y="919">Implemented and exercised in the Kaggle runs</text>
+  <text class="amber" x="380" y="919">Orange text</text>
+  <text class="s" x="460" y="919">Implemented, not exercised in the runs</text>
+  <rect class="prop" x="740" y="905" width="34" height="18" rx="3"/>
+  <text class="s" x="782" y="919">Proposed, not implemented</text>
+  <rect class="ext" x="990" y="905" width="34" height="18" rx="3"/>
+  <text class="s" x="1032" y="919">External model (unmodified weights)</text>
+
+  <text x="30" y="955" font-size="13" fill="#0f172a"><tspan font-weight="700">Measured (Gemma 4 E4B, Kaggle T4, n = 20 SymPy bugs):</tspan> attempt bound held on every bug (C2 verified); −82% tokens and −74% time vs the unconstrained baseline,</text>
+  <text x="30" y="974" font-size="13" fill="#0f172a">the same as a plain 3-attempt cap; no fix-rate or cost-per-fixed-bug gain shown yet. Five configurations: baseline, baseline_k3, reflex_only, static_mask, full.</text>
+  <text x="30" y="996" font-size="11.5" fill="#64748b">Source: hneg-gemma4-agent (src/, experiments/). Dashed elements are research extensions, not part of the measured system.</text>
+</svg>

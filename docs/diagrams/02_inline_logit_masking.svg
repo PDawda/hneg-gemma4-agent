@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="980" viewBox="0 0 1460 980" font-family="Helvetica, Arial, sans-serif">
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  <marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6d28d9"/></marker>
+  <style>
+    .t{font-size:15px;font-weight:700;fill:#0f172a}
+    .s{font-size:12.5px;fill:#334155}
+    .o{font-size:12px;fill:#b45309;font-weight:700}
+    .lab{font-size:11.5px;fill:#475569}
+    .tag{font-size:12px;font-weight:700;fill:#475569;letter-spacing:.06em}
+    .impl{fill:#e6f4f1;stroke:#0f766e;stroke-width:2}
+    .ext{fill:#f1f5f9;stroke:#64748b;stroke-width:2}
+    .prop{fill:#f5f3ff;stroke:#6d28d9;stroke-width:2;stroke-dasharray:7 5}
+    .amb{fill:#fff7ed;stroke:#b45309;stroke-width:2}
+    .ln{stroke:#475569;stroke-width:1.8;fill:none}
+    .lp{stroke:#6d28d9;stroke-width:1.8;fill:none;stroke-dasharray:6 4}
+    .card{fill:#ffffff;stroke:#e2e8f0}
+    .ct{font-size:16px;font-weight:700}
+    .cs{font-size:13.5px;fill:#334155}
+  </style>
+</defs><rect width="1460" height="980" fill="#f8fafc"/>
+<text class="tag" x="30" y="34" text-anchor="start" >H-NEG × GEMMA 4   /   02</text>
+<text x="30" y="72" font-size="30" font-weight="800" fill="#0f172a">Inline Logit Masking</text>
+<text x="30" y="100" font-size="15" fill="#475569">Implemented on the base logit stream: CPG scope gate + edit-level anti-replay. Proposed: CFG grammar and masking of the MTP drafter stream.</text>
+<rect x="1130" y="18" width="300" height="30" rx="15" fill="#e6f4f1" stroke="#0f766e" stroke-dasharray="4 3"/>
+<text x="1280.0" y="38" text-anchor="middle" font-size="12.5" font-weight="800" fill="#0f766e" letter-spacing=".08em">IMPLEMENTED + PROPOSED</text>
+<rect x="20" y="120" width="1420" height="410" rx="12" fill="#ffffff" stroke="#e2e8f0"/>
+<text class="tag" x="40" y="146" text-anchor="start" >IMPLEMENTED · BASE STREAM (llama.cpp logits_processor, greedy)</text>
+<rect class="impl" x="450" y="160" width="200" height="56" rx="6"/>
+<text class="t" x="550.0" y="184.5" text-anchor="middle" >CPG allowlist</text>
+<text class="s" x="550.0" y="201.5" text-anchor="middle" >Figure 01</text>
+<rect class="impl" x="670" y="160" width="230" height="56" rx="6"/>
+<text class="t" x="785.0" y="184.5" text-anchor="middle" >Failed edits  H_failed</text>
+<text class="s" x="785.0" y="201.5" text-anchor="middle" >updated by Loop 2 (Figure 03)</text>
+<rect class="prop" x="920" y="160" width="250" height="56" rx="6"/>
+<text class="t" x="1045.0" y="184.5" text-anchor="middle" >CFG grammar state</text>
+<text class="s" x="1045.0" y="201.5" text-anchor="middle" >SynCode / XGrammar adapter</text>
+<rect class="ext" x="40" y="250" width="200" height="86" rx="6"/>
+<text class="t" x="140.0" y="281.0" text-anchor="middle" >Gemma 4 base model</text>
+<text class="s" x="140.0" y="298.0" text-anchor="middle" >llama.cpp GGUF</text>
+<text class="s" x="140.0" y="316.0" text-anchor="middle" >(E4B / E2B run)</text>
+<rect class="ext" x="280" y="250" width="200" height="86" rx="6"/>
+<text class="t" x="380.0" y="281.0" text-anchor="middle" >Base logits zₜ</text>
+<text class="s" x="380.0" y="298.0" text-anchor="middle" >Gemma soft-cap applied</text>
+<text class="s" x="380.0" y="316.0" text-anchor="middle" >inside the model</text>
+<rect class="impl" x="520" y="245" width="380" height="96" rx="6"/>
+<text class="t" x="710.0" y="272.5" text-anchor="middle" >Mₜ filter:  z̃ₜ = zₜ + Mₜ</text>
+<text class="s" x="710.0" y="289.5" text-anchor="middle" >scope gate (static_mask, full)</text>
+<text class="s" x="710.0" y="307.5" text-anchor="middle" >edit replay guard (full)</text>
+<text class="s" x="710.0" y="325.5" text-anchor="middle" >Mₜ ∈ {0, −∞}</text>
+<rect class="impl" x="940" y="250" width="210" height="86" rx="6"/>
+<text class="t" x="1045.0" y="281.0" text-anchor="middle" >Greedy selection</text>
+<text class="s" x="1045.0" y="298.0" text-anchor="middle" >next token</text>
+<text class="s" x="1045.0" y="316.0" text-anchor="middle" >(temperature 0)</text>
+<rect class="impl" x="1190" y="250" width="230" height="86" rx="6"/>
+<text class="t" x="1305.0" y="281.0" text-anchor="middle" >Prefix state</text>
+<text class="s" x="1305.0" y="298.0" text-anchor="middle" >decoded text so far</text>
+<text class="s" x="1305.0" y="316.0" text-anchor="middle" >→ gate + guard state</text>
+<polyline class="ln" points="240,293 278,293" marker-end="url(#a)"/>
+<polyline class="ln" points="480,293 518,293" marker-end="url(#a)"/>
+<polyline class="ln" points="900,293 938,293" marker-end="url(#a)"/>
+<polyline class="ln" points="1150,293 1188,293" marker-end="url(#a)"/>
+<polyline class="ln" points="550,216 600,243" marker-end="url(#a)"/>
+<polyline class="ln" points="785,216 760,243" marker-end="url(#a)"/>
+<polyline class="lp" points="1045,216 880,243" marker-end="url(#ap)"/>
+<polyline class="ln" points="1305,336 1305,360 710,360 710,343" marker-end="url(#a)"/>
+<text class="lab" x="900" y="354" text-anchor="start" >mask state follows the actual prefix</text>
+<line x1="40" y1="380" x2="1420" y2="380" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4 4"/>
+<text class="tag" x="260" y="404" text-anchor="start" >PROPOSED · MTP DRAFTER STREAM (speculation-aware masking)</text>
+<rect class="prop" x="40" y="420" width="200" height="86" rx="6"/>
+<text class="t" x="140.0" y="459.5" text-anchor="middle" >MTP drafter head</text>
+<text class="s" x="140.0" y="476.5" text-anchor="middle" >activations + shared KV</text>
+<rect class="prop" x="280" y="420" width="200" height="86" rx="6"/>
+<text class="t" x="380.0" y="468.0" text-anchor="middle" >Drafter logits z_t^D</text>
+<rect class="prop" x="520" y="415" width="380" height="96" rx="6"/>
+<text class="t" x="710.0" y="451.0" text-anchor="middle" >Same Mₜ on each draft prefix</text>
+<text class="s" x="710.0" y="468.0" text-anchor="middle" >z̃^D = z^D + Mₜ(· | p_draft)</text>
+<text class="o" x="710.0" y="486.0" text-anchor="middle" >helper exists: filter_draft_tokens() — not wired</text>
+<rect class="prop" x="940" y="420" width="210" height="86" rx="6"/>
+<text class="t" x="1045.0" y="459.5" text-anchor="middle" >Masked draft sampling</text>
+<text class="s" x="1045.0" y="476.5" text-anchor="middle" >candidate sequence</text>
+<rect class="prop" x="1190" y="420" width="230" height="86" rx="6"/>
+<text class="t" x="1305.0" y="459.5" text-anchor="middle" >Masked target verification</text>
+<text class="s" x="1305.0" y="476.5" text-anchor="middle" >roll back rejected branch</text>
+<polyline class="lp" points="140,336 140,418" marker-end="url(#ap)"/>
+<polyline class="lp" points="240,463 278,463" marker-end="url(#ap)"/>
+<polyline class="lp" points="480,463 518,463" marker-end="url(#ap)"/>
+<polyline class="lp" points="900,463 938,463" marker-end="url(#ap)"/>
+<polyline class="lp" points="1150,463 1188,463" marker-end="url(#ap)"/>
+<polyline class="lp" points="1305,420 1305,338" marker-end="url(#ap)"/>
+<text class="lab" x="1312" y="400" text-anchor="start" >accepted tokens</text>
+<rect class="card" x="20.0" y="550" width="460.0" height="160" rx="10"/>
+<rect x="20.0" y="550" width="460.0" height="5" rx="2" fill="#0f766e"/>
+<text class="ct" x="38.0" y="582" fill="#0f766e">Scope gate (implemented)</text>
+<text class="cs" x="38.0" y="606" text-anchor="start" >Blocks tokens that start a bare name not in the CPG</text>
+<text class="cs" x="38.0" y="625" text-anchor="start" >allowlist, a builtin, or bound by the patch itself.</text>
+<text class="cs" x="38.0" y="644" text-anchor="start" >Free at statement starts, after def/class/for/as, in</text>
+<text class="cs" x="38.0" y="663" text-anchor="start" >parameter lists, imports, after &#x27;.&#x27;, strings, comments.</text>
+<rect class="card" x="500.0" y="550" width="460.0" height="160" rx="10"/>
+<rect x="500.0" y="550" width="460.0" height="5" rx="2" fill="#0f766e"/>
+<text class="ct" x="518.0" y="582" fill="#0f766e">Anti-replay (implemented)</text>
+<text class="cs" x="518.0" y="606" text-anchor="start" >Edit mode (used in the runs): masks only the token</text>
+<text class="cs" x="518.0" y="625" text-anchor="start" >that would complete a no-op edit, a failed</text>
+<text class="cs" x="518.0" y="644" text-anchor="start" >(SEARCH, REPLACE) pair or an already-unfound SEARCH.</text>
+<text class="cs" x="518.0" y="663" text-anchor="start" >Whole-file mode: token trie after 8 shared tokens.</text>
+<rect class="card" x="980.0" y="550" width="460.0" height="160" rx="10"/>
+<rect x="980.0" y="550" width="460.0" height="5" rx="2" fill="#6d28d9"/>
+<text class="ct" x="998.0" y="582" fill="#6d28d9">Proposed</text>
+<text class="cs" x="998.0" y="606" text-anchor="start" >CFG grammar via a SynCode / XGrammar adapter.</text>
+<text class="cs" x="998.0" y="625" text-anchor="start" >Speculation-aware masking: the same rules on every</text>
+<text class="cs" x="998.0" y="644" text-anchor="start" >draft and target prefix, with rollback of rejected</text>
+<text class="cs" x="998.0" y="663" text-anchor="start" >branches. Not implemented, not measured.</text>
+<rect x="20" y="730" width="1420" height="168" rx="12" fill="#0f172a"/>
+<text x="44" y="766" font-size="19" fill="#f8fafc" font-family="Georgia, serif">A_t(p) = V_CPG(p) \ Replay(H_failed, p)</text>
+<text x="640" y="766" font-size="13" font-weight="700" fill="#5eead4">[implemented]</text>
+<text x="44" y="796" font-size="19" fill="#f8fafc" font-family="Georgia, serif">A_t(p) ← A_t(p) ∩ V_CFG(p)</text>
+<text x="640" y="796" font-size="13" font-weight="700" fill="#c4b5fd">[proposed]</text>
+<text x="44" y="826" font-size="19" fill="#f8fafc" font-family="Georgia, serif">M_t(v | p) = 0 if v ∈ A_t(p);  −∞ otherwise</text>
+<text x="44" y="856" font-size="19" fill="#f8fafc" font-family="Georgia, serif">z̃_t = z_t + M_t     (Gemma&#x27;s soft-cap is already applied inside llama.cpp; H-NEG does not re-apply it)</text>
+<text x="44" y="884" font-size="13" fill="#cbd5e1">If A_t is empty: drop the replay rule and keep the scope mask; if still empty, allow end-of-sequence only. The vocabulary is never unmasked. Every fallback is counted.</text>
+<rect class="impl" x="30" y="918" width="30" height="16" rx="3"/>
+<text class="s" x="68" y="931" text-anchor="start" >Implemented and exercised in the Kaggle runs</text>
+<rect class="amb" x="360" y="918" width="30" height="16" rx="3"/>
+<text class="s" x="398" y="931" text-anchor="start" >Implemented, not exercised in the runs</text>
+<rect class="prop" x="660" y="918" width="30" height="16" rx="3"/>
+<text class="s" x="698" y="931" text-anchor="start" >Proposed, not implemented</text>
+<rect class="ext" x="900" y="918" width="30" height="16" rx="3"/>
+<text class="s" x="938" y="931" text-anchor="start" >External / unmodified (Gemma 4, llama.cpp)</text>
+<text x="30" y="955" font-size="12.5" fill="#0f172a">Measured (Gemma 4 E4B, n = 20): mask active in static_mask and full; no configuration introduced out-of-scope names, so C5 is inconclusive.</text>
+</svg>

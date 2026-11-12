@@ -1,0 +1,141 @@
+{
+  "n": 20,
+  "model": "gemma-4-E4B-it-Q4_K_M.gguf",
+  "model_sha256": "85a896a047553e842f25297ee5b031d64ff30147d9c4af17b1e4b394cd1fab87",
+  "code_sha256": "411d9fd39892a989",
+  "task_ids_sha256": "4be1f94b78ccc176",
+  "k_max": 3,
+  "claims": [
+    {
+      "id": "C1",
+      "group": "guarantee",
+      "claim": "Infinite-loop elimination (identical failed patch re-submitted until retries ran out)",
+      "paper_value": "42.1% \u2192 0.0%",
+      "verdict": "NOT SUPPORTED",
+      "measured": "full 10.0% \u00b7 baseline_k3 60.0% \u00b7 baseline 95.0% \u00b7 reflex_only 100.0% \u00b7 static_mask 95.0%",
+      "reason": "full H-NEG still re-submitted an identical failed patch until retries ran out"
+    },
+    {
+      "id": "C2",
+      "group": "guarantee",
+      "claim": "Bounded convergence loop: at most K_max = 3 attempts, then GRACEFUL_HALT",
+      "paper_value": "k \u2264 3",
+      "verdict": "VERIFIED",
+      "measured": "max attempts 3; halt rate 100.0%; max tokens/bug 27,093 vs baseline 137,311",
+      "reason": "hard cap held on every bug"
+    },
+    {
+      "id": "C3",
+      "group": "guarantee",
+      "claim": "Failed-patch exclusion: a failed patch is never re-submitted",
+      "paper_value": "trie pruning",
+      "verdict": "NOT SUPPORTED",
+      "measured": "full 3 repeated attempts \u00b7 baseline_k3 20 \u00b7 baseline 133 \u00b7 reflex_only 142 \u00b7 static_mask 135",
+      "reason": "3 attempts re-submitted an earlier patch"
+    },
+    {
+      "id": "C4",
+      "group": "guarantee",
+      "claim": "0.0% parse failure rate (syntactically valid patches)",
+      "paper_value": "0.0%",
+      "verdict": "NOT SUPPORTED",
+      "measured": "syntax failures 11.4% of applied patches; edits that could not be applied 41.7% of attempts (not prevented by the mask; same for every config)",
+      "reason": "some applied patches did not parse"
+    },
+    {
+      "id": "C5",
+      "group": "guarantee",
+      "claim": "No out-of-scope identifiers (CPG-scoped logit mask)",
+      "paper_value": "masked to \u2212\u221e",
+      "verdict": "INCONCLUSIVE",
+      "measured": "full 0.0% \u00b7 baseline_k3 0.0% \u00b7 baseline 0.0% \u00b7 reflex_only 0.0% \u00b7 static_mask 0.0%",
+      "reason": "0% for full, but unconstrained configurations did not invent names either"
+    },
+    {
+      "id": "C6",
+      "group": "effect",
+      "claim": "Token reduction per bug vs unconstrained baseline",
+      "paper_value": "\u221264.2%",
+      "verdict": "VERIFIED",
+      "measured": "82.2% [95% CI 79.6, 84.5]",
+      "reason": "mostly the retry cap: see C8"
+    },
+    {
+      "id": "C7",
+      "group": "effect",
+      "claim": "End-to-end speedup per bug vs unconstrained baseline",
+      "paper_value": "3.93\u00d7",
+      "verdict": "VERIFIED",
+      "measured": "3.87\u00d7 [95% CI 3.10, 4.96]",
+      "reason": "CI excludes 1\u00d7"
+    },
+    {
+      "id": "C8",
+      "group": "effect",
+      "claim": "Governance adds value beyond the retry cap (full vs baseline_k3: same K_max and context)",
+      "paper_value": "implied by Table 6.3",
+      "verdict": "INCONCLUSIVE",
+      "measured": "Pass@1 0.0% vs 0.0% \u00b7 tokens/resolved n/a vs n/a \u00b7 tokens/bug 2.2% change",
+      "reason": "neither configuration resolved a bug: the model, not the governance, is the bottleneck"
+    },
+    {
+      "id": "C9",
+      "group": "effect",
+      "claim": "Higher issue-resolution rate (Pass@1) than the unconstrained baseline",
+      "paper_value": "19.2% \u2192 31.8%",
+      "verdict": "INCONCLUSIVE",
+      "measured": "0.0% (0/20) vs 5.0% (1/20)",
+      "reason": "baseline ahead but not significant (p = 1, 0 vs 1)"
+    },
+    {
+      "id": "C10a",
+      "group": "effect",
+      "claim": "Lower cost per resolved bug: full vs baseline",
+      "paper_value": "\u221264.2% tokens, 3.93\u00d7 per resolved patch",
+      "verdict": "INCONCLUSIVE",
+      "measured": "n/a saving",
+      "reason": "a configuration resolved nothing, so cost per resolved bug is undefined"
+    },
+    {
+      "id": "C10b",
+      "group": "effect",
+      "claim": "Lower cost per resolved bug: full vs baseline_k3",
+      "paper_value": "\u221264.2% tokens, 3.93\u00d7 per resolved patch",
+      "verdict": "INCONCLUSIVE",
+      "measured": "n/a saving",
+      "reason": "a configuration resolved nothing, so cost per resolved bug is undefined"
+    }
+  ],
+  "attempt_rates": {
+    "baseline_k3": {
+      "attempts": 60,
+      "syntax_fail_pct": 0.0,
+      "apply_fail_pct": 51.666666666666664,
+      "applied_attempts": 29
+    },
+    "baseline": {
+      "attempts": 192,
+      "syntax_fail_pct": 0.0,
+      "apply_fail_pct": 50.520833333333336,
+      "applied_attempts": 95
+    },
+    "reflex_only": {
+      "attempts": 200,
+      "syntax_fail_pct": 0.0,
+      "apply_fail_pct": 48.0,
+      "applied_attempts": 104
+    },
+    "static_mask": {
+      "attempts": 200,
+      "syntax_fail_pct": 0.0,
+      "apply_fail_pct": 46.5,
+      "applied_attempts": 107
+    },
+    "full": {
+      "attempts": 60,
+      "syntax_fail_pct": 11.428571428571429,
+      "apply_fail_pct": 41.666666666666664,
+      "applied_attempts": 35
+    }
+  }
+}

@@ -1,0 +1,6 @@
+system_configuration,config_key,n_bugs,parse_failure_rate_pct,infinite_loop_rate_pct,mean_token_footprint,mean_run_latency_s,pass_at_1_pct,graceful_halt_rate_pct,mean_token_waste,model,backend
+Baseline Gemma [gemma-4-E4B-it-Q4_K_M.gguf] (Unconstrained),baseline,20,50.5,95.0,73282,219.3,5.0,0.0,0.999,gemma-4-E4B-it-Q4_K_M.gguf,gguf
+Baseline Gemma [gemma-4-E4B-it-Q4_K_M.gguf] + K_max Retry Cap (no masking),baseline_k3,20,51.7,60.0,12747,44.0,0.0,0.0,1.0,gemma-4-E4B-it-Q4_K_M.gguf,gguf
+Gemma [gemma-4-E4B-it-Q4_K_M.gguf] + Loop 1 Reflex Only,reflex_only,20,48.0,100.0,44485,126.6,0.0,0.0,1.0,gemma-4-E4B-it-Q4_K_M.gguf,gguf
+Gemma [gemma-4-E4B-it-Q4_K_M.gguf] + Identifier-Scope Logit Masking,static_mask,20,46.5,95.0,44675,152.1,0.0,0.0,1.0,gemma-4-E4B-it-Q4_K_M.gguf,gguf
+Full H-NEG Pipeline (CPG + PDA + Mask + Anti-Replay),full,20,48.3,10.0,13030,56.7,0.0,100.0,1.0,gemma-4-E4B-it-Q4_K_M.gguf,gguf

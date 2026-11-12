@@ -1,0 +1,51 @@
+agent:
+  name: "Gemma4-HNEG-Agent"
+  version: "1.0.0"
+  model_id: "gemma-4-31b-it-qat-w4a16-ct"
+  runtime: "local-offline"
+
+governance:
+  max_convergence_retries: 3
+  max_pda_stack_depth: 4
+  strict_mode: true
+  enable_graceful_halt: true
+
+symbolic_engine:
+  inline_cfg_masking: true
+  trie_prefix_exclusion: true
+  cpg_dependency_check: true
+  reflex_latency_cap_ms: 50
+  # Minimum number of tokens a new patch must share with a failed patch
+  # before the trie starts masking the continuation token.
+  trie_min_prefix_len: 8
+  # Final-logit soft-cap. Set to null when the model already applies it
+  # internally (Hugging Face Gemma checkpoints do), to avoid double-capping.
+  logit_softcap: null
+
+tool_state_matrix:
+  - tool_name: "query_cpg_graph"
+    allowed_state: "REPO_ANALYSIS"
+  - tool_name: "emit_structured_patch"
+    allowed_state: "CODE_EDIT"
+  - tool_name: "resolve_external_symbol"
+    allowed_state: "RESOLVE_DEP"
+  - tool_name: "run_test_suite"
+    allowed_state: "SYMBOLIC_VALIDATION"
+
+# Lightweight sandbox for laptops / 8-12 GB GPUs: same governance stack, run
+# through llama.cpp on a quantized GGUF checkpoint. Use it to verify masking
+# and state-machine behaviour before deploying agent.model_id (31B).
+# Default: Gemma 4 E2B Q4_K_M (3.1 GB) -- fits one Kaggle T4 (16 GB) with room for
+# a 16K context. Step up to E4B for better repair quality:
+#   repo_id: "unsloth/gemma-4-E4B-it-GGUF"   filename: "gemma-4-E4B-it-Q4_K_M.gguf"  (~5.0 GB)
+# Avoid the 2-bit quants (UD-IQ2_M, Q2_K): they produce enough broken code to make
+# the masking checks noisy.
+sandbox:
+  backend: "gguf"
+  repo_id: "unsloth/gemma-4-E2B-it-GGUF"
+  filename: "gemma-4-E2B-it-Q4_K_M.gguf"   # ~3.1 GB
+  model_path: null        # set to a local .gguf to skip the Hub download
+  n_ctx: 16384
+  n_gpu_layers: -1        # -1 = offload all layers to GPU; 0 = CPU only
+  n_threads: null         # null = llama.cpp default
+  max_new_tokens: 1024

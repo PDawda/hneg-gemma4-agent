@@ -1,0 +1,256 @@
+{
+  "n": 20,
+  "instance_ids": [
+    "sympy__sympy-15308",
+    "sympy__sympy-15346",
+    "sympy__sympy-15609",
+    "sympy__sympy-16503",
+    "sympy__sympy-16792",
+    "sympy__sympy-16988",
+    "sympy__sympy-17139",
+    "sympy__sympy-17630",
+    "sympy__sympy-17655",
+    "sympy__sympy-18087",
+    "sympy__sympy-18532",
+    "sympy__sympy-18835",
+    "sympy__sympy-19487",
+    "sympy__sympy-20049",
+    "sympy__sympy-20154",
+    "sympy__sympy-21055",
+    "sympy__sympy-21612",
+    "sympy__sympy-22005",
+    "sympy__sympy-22714",
+    "sympy__sympy-23262"
+  ],
+  "stats": {
+    "baseline": {
+      "p95_tokens": 121346.0,
+      "max_tokens": 137311.0,
+      "p95_latency_s": 330.8152116230003,
+      "max_latency_s": 357.8243559980001,
+      "repeat_episode_pct": 95.0,
+      "repeated_attempts": 133,
+      "oos_attempt_pct": 0.0,
+      "n": 20,
+      "pfr_pct": 50.520833333333336,
+      "loop_pct": 95.0,
+      "halt_pct": 0.0,
+      "overflow_pct": 0.0,
+      "tokens_per_bug": 73281.55,
+      "latency_per_bug_s": 219.27912443610003,
+      "pass_at_1_pct": 5.0,
+      "resolved": 1,
+      "tokens_per_resolved": 1465631.0,
+      "latency_per_resolved_s": 4385.582488722001,
+      "mean_turns": 9.6
+    },
+    "baseline_k3": {
+      "p95_tokens": 24647.0,
+      "max_tokens": 27093.0,
+      "p95_latency_s": 107.8362994099989,
+      "max_latency_s": 172.98223810699983,
+      "repeat_episode_pct": 60.0,
+      "repeated_attempts": 20,
+      "oos_attempt_pct": 0.0,
+      "n": 20,
+      "pfr_pct": 51.666666666666664,
+      "loop_pct": 60.0,
+      "halt_pct": 0.0,
+      "overflow_pct": 0.0,
+      "tokens_per_bug": 12746.85,
+      "latency_per_bug_s": 44.0021093408002,
+      "pass_at_1_pct": 0.0,
+      "resolved": 0,
+      "tokens_per_resolved": null,
+      "latency_per_resolved_s": null,
+      "mean_turns": 3.0
+    },
+    "reflex_only": {
+      "p95_tokens": 83841.0,
+      "max_tokens": 95519.0,
+      "p95_latency_s": 245.0394793280011,
+      "max_latency_s": 259.3142673780003,
+      "repeat_episode_pct": 100.0,
+      "repeated_attempts": 142,
+      "oos_attempt_pct": 0.0,
+      "n": 20,
+      "pfr_pct": 48.0,
+      "loop_pct": 100.0,
+      "halt_pct": 0.0,
+      "overflow_pct": 0.0,
+      "tokens_per_bug": 44485.1,
+      "latency_per_bug_s": 126.62182234300016,
+      "pass_at_1_pct": 0.0,
+      "resolved": 0,
+      "tokens_per_resolved": null,
+      "latency_per_resolved_s": null,
+      "mean_turns": 10.0
+    },
+    "static_mask": {
+      "p95_tokens": 83840.0,
+      "max_tokens": 95519.0,
+      "p95_latency_s": 263.8038104879997,
+      "max_latency_s": 289.3459901790002,
+      "repeat_episode_pct": 95.0,
+      "repeated_attempts": 135,
+      "oos_attempt_pct": 0.0,
+      "n": 20,
+      "pfr_pct": 46.5,
+      "loop_pct": 95.0,
+      "halt_pct": 0.0,
+      "overflow_pct": 0.0,
+      "tokens_per_bug": 44675.1,
+      "latency_per_bug_s": 152.12155065545002,
+      "pass_at_1_pct": 0.0,
+      "resolved": 0,
+      "tokens_per_resolved": null,
+      "latency_per_resolved_s": null,
+      "mean_turns": 10.0
+    },
+    "full": {
+      "p95_tokens": 25858.0,
+      "max_tokens": 27093.0,
+      "p95_latency_s": 107.96440565000012,
+      "max_latency_s": 178.1893510200007,
+      "repeat_episode_pct": 10.0,
+      "repeated_attempts": 3,
+      "oos_attempt_pct": 0.0,
+      "n": 20,
+      "pfr_pct": 48.333333333333336,
+      "loop_pct": 10.0,
+      "halt_pct": 100.0,
+      "overflow_pct": 0.0,
+      "tokens_per_bug": 13030.2,
+      "latency_per_bug_s": 56.68345439035012,
+      "pass_at_1_pct": 0.0,
+      "resolved": 0,
+      "tokens_per_resolved": null,
+      "latency_per_resolved_s": null,
+      "mean_turns": 3.0
+    }
+  },
+  "comparisons": [
+    {
+      "a": "full",
+      "b": "baseline",
+      "n": 20,
+      "token_reduction_pct": 82.21898963654563,
+      "token_reduction_ci": [
+        79.57548528876846,
+        84.48230155482409
+      ],
+      "speedup_x": 3.868485553580349,
+      "speedup_ci": [
+        3.104015893935737,
+        4.961305942108771
+      ],
+      "delta_pass_at_1_pp": -5.0,
+      "delta_pass_at_1_ci": [
+        -15.0,
+        0.0
+      ]
+    },
+    {
+      "a": "full",
+      "b": "baseline_k3",
+      "n": 20,
+      "token_reduction_pct": -2.222902128761217,
+      "token_reduction_ci": [
+        -5.84371544415776,
+        0.42800577706375575
+      ],
+      "speedup_x": 0.77627783652316,
+      "speedup_ci": [
+        0.6403450292718109,
+        0.8859773571244376
+      ],
+      "delta_pass_at_1_pp": 0.0,
+      "delta_pass_at_1_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "a": "baseline_k3",
+      "b": "baseline",
+      "n": 20,
+      "token_reduction_pct": 82.60564903444319,
+      "token_reduction_ci": [
+        80.05387936303055,
+        84.84038280746896
+      ],
+      "speedup_x": 4.983377563510966,
+      "speedup_ci": [
+        3.759523297797966,
+        6.862132550689669
+      ],
+      "delta_pass_at_1_pp": -5.0,
+      "delta_pass_at_1_ci": [
+        -15.0,
+        0.0
+      ]
+    }
+  ],
+  "roi": {
+    "gpu_cost_per_hour": 0.35,
+    "price_per_mtok": null,
+    "bugs_per_month": 1000,
+    "per_config": {
+      "baseline": {
+        "cost_per_bug": 0.021318803764620836,
+        "cost_per_resolved": 0.4263760752924167,
+        "monthly_cost": 21.318803764620835,
+        "monthly_resolved": 50.0
+      },
+      "baseline_k3": {
+        "cost_per_bug": 0.004277982852577797,
+        "cost_per_resolved": null,
+        "monthly_cost": 4.277982852577797,
+        "monthly_resolved": 0.0
+      },
+      "reflex_only": {
+        "cost_per_bug": 0.012310454950013903,
+        "cost_per_resolved": null,
+        "monthly_cost": 12.310454950013902,
+        "monthly_resolved": 0.0
+      },
+      "static_mask": {
+        "cost_per_bug": 0.014789595202613196,
+        "cost_per_resolved": null,
+        "monthly_cost": 14.789595202613196,
+        "monthly_resolved": 0.0
+      },
+      "full": {
+        "cost_per_bug": 0.005510891399061817,
+        "cost_per_resolved": null,
+        "monthly_cost": 5.510891399061817,
+        "monthly_resolved": 0.0
+      }
+    },
+    "savings": [
+      {
+        "a": "full",
+        "b": "baseline",
+        "cost_per_resolved_saving_pct": null,
+        "ci": null,
+        "bootstrap_samples_used": 0
+      },
+      {
+        "a": "full",
+        "b": "baseline_k3",
+        "cost_per_resolved_saving_pct": null,
+        "ci": null,
+        "bootstrap_samples_used": 0
+      },
+      {
+        "a": "baseline_k3",
+        "b": "baseline",
+        "cost_per_resolved_saving_pct": null,
+        "ci": null,
+        "bootstrap_samples_used": 0
+      }
+    ]
+  },
+  "model": "gemma-4-E4B-it-Q4_K_M.gguf",
+  "model_sha256": "85a896a047553e842f25297ee5b031d64ff30147d9c4af17b1e4b394cd1fab87"
+}
