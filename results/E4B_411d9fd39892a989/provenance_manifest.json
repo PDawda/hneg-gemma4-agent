@@ -1,0 +1,222 @@
+{
+  "schema": "hneg-provenance/1",
+  "project": "H-NEG (github.com/PDawda/hneg-gemma4-agent)",
+  "run": "E4B_411d9fd39892a989",
+  "run_created": "2026-11-12 03:19:26 UTC",
+  "model": "gemma-4-E4B-it-Q4_K_M.gguf",
+  "model_sha256": "85a896a047553e842f25297ee5b031d64ff30147d9c4af17b1e4b394cd1fab87",
+  "code_fingerprint": "411d9fd39892a989",
+  "task_set_hash": "4be1f94b78ccc176",
+  "gpu": "Tesla T4",
+  "n_files": 41,
+  "total_bytes": 1178193,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2061,
+      "sha256": "4b2744893f4eecad208e65b84c58d145235715d6ac5c5e33d46523a26c5254d9"
+    },
+    {
+      "path": "attempts_baseline.jsonl",
+      "bytes": 237844,
+      "sha256": "c453ff9f74b56d621543235dbcbc70ca5884ca976385708307d606770633f83a"
+    },
+    {
+      "path": "attempts_baseline_k3.jsonl",
+      "bytes": 78481,
+      "sha256": "71e993f95cfcc0d87c475a75ef2cd1e1d0b3cca710fcab2a77fabc7880f8a6c1"
+    },
+    {
+      "path": "attempts_full.jsonl",
+      "bytes": 85573,
+      "sha256": "91989c62be96905dd19891ab91310cf96e3e091834c057807e47c901b370c4dc"
+    },
+    {
+      "path": "attempts_reflex_only.jsonl",
+      "bytes": 264102,
+      "sha256": "67b668e069965939eb52b5a2348ef3d8c9fbbd4cbb842df0ca3acda7778b39e9"
+    },
+    {
+      "path": "attempts_static_mask.jsonl",
+      "bytes": 262796,
+      "sha256": "287c9c4f934fbaa4fd70e346d4e71fa4202438d2a497fb853af84c9b7ecbbda5"
+    },
+    {
+      "path": "claims.json",
+      "bytes": 5138,
+      "sha256": "fa9b76ab833b06210ca6cda49efa57a8809f97d6e5b1ac03aacd1fdd82259b97"
+    },
+    {
+      "path": "claims_verification.md",
+      "bytes": 3305,
+      "sha256": "c274c84dd9c50374fc7587676fcbafaa691acd57226ed42b2863cd404fe00c0a"
+    },
+    {
+      "path": "code_snapshot_411d9fd39892a989.zip",
+      "bytes": 121972,
+      "sha256": "620e31bdb035a330b8065e9d608e10f8cad85cd8a3fd849545f4c7230acdc9d8"
+    },
+    {
+      "path": "per_bug_baseline.csv",
+      "bytes": 2153,
+      "sha256": "a8685a95d261363b4afa5f9be136df4b6271c073ff7c63b54ad3f8c128db04f5"
+    },
+    {
+      "path": "per_bug_baseline_k3.csv",
+      "bytes": 2176,
+      "sha256": "a505549feeace86fcbb73101948ea406b6d77f438e057e17eeaf39af75f01377"
+    },
+    {
+      "path": "per_bug_full.csv",
+      "bytes": 2366,
+      "sha256": "fb8f5a6dd51852aec13731dc01ca89806812cd773c7f39471f2285ef570224da"
+    },
+    {
+      "path": "per_bug_reflex_only.csv",
+      "bytes": 2525,
+      "sha256": "22dcefcbb23921593b2b7c81d3b2cded01bfc7071968fab9a48a8aa1147acb48"
+    },
+    {
+      "path": "per_bug_static_mask.csv",
+      "bytes": 2523,
+      "sha256": "9b0eacb9fe6cf75aa4ac5b290690f9e3933d864e627b2d56b7e52bba90d46c14"
+    },
+    {
+      "path": "run_meta.json",
+      "bytes": 1931,
+      "sha256": "85ccd9fc605fc9807e95131bc79fe080d43507f9a409af3e3ac51b688a62243d"
+    },
+    {
+      "path": "savings.json",
+      "bytes": 6708,
+      "sha256": "3f5728a1e6dc4e7ec9adf7e6e4bc088a185957ead4e9a4c6e772ee82069d85d7"
+    },
+    {
+      "path": "savings_report.md",
+      "bytes": 3217,
+      "sha256": "e2f4824c616fc6e4cc2bba50ff7e151802743f39005c6a50c5784cbd01d64a99"
+    },
+    {
+      "path": "summary.csv",
+      "bytes": 909,
+      "sha256": "a0a77f6224c6c658b64671169bee9e4ef01b0ba9658dc9a9143af8154511315e"
+    },
+    {
+      "path": "tasks.jsonl",
+      "bytes": 34123,
+      "sha256": "4fd4dfa221ad789900ee503f8d7985ea943b9422cc4ef0c20082e3699e2d2eba"
+    },
+    {
+      "path": "tasks_ids.txt",
+      "bytes": 380,
+      "sha256": "9e646cf45cfdc53957643831f83a7c5b1ee5345ff34733c68e3ac4b27aa2630b"
+    },
+    {
+      "path": "tasks_validation.jsonl",
+      "bytes": 14462,
+      "sha256": "3cfda7726738b4fbe5bf03a5f02a6b46e299a507888b4aafa03adfa55795c25d"
+    },
+    {
+      "path": "traces/sympy__sympy-15308.jsonl",
+      "bytes": 2094,
+      "sha256": "ce0b4d888f506d31f0ad5dbbae456aeab8ce6b84b5c401e5635647a52d534bc8"
+    },
+    {
+      "path": "traces/sympy__sympy-15346.jsonl",
+      "bytes": 2228,
+      "sha256": "9dbbae904445f04fd7ca0116a1630b179eabe210dca5c152529f14ac2fae41ca"
+    },
+    {
+      "path": "traces/sympy__sympy-15609.jsonl",
+      "bytes": 2224,
+      "sha256": "a20addd6028ffaa65b6baeed032f5c29cad25761e937b2806cfe530312810502"
+    },
+    {
+      "path": "traces/sympy__sympy-16503.jsonl",
+      "bytes": 2123,
+      "sha256": "6c7ed87ea975c2ade7d36ad0eb6cc59559bbdaee284051b9d647a8c768288de2"
+    },
+    {
+      "path": "traces/sympy__sympy-16792.jsonl",
+      "bytes": 2229,
+      "sha256": "e44bdf73ec71195170a3e2b0efd58ffdb6a1e62067e78193936ebbb937a4e0dd"
+    },
+    {
+      "path": "traces/sympy__sympy-16988.jsonl",
+      "bytes": 2084,
+      "sha256": "95b5013dea353219fb1fccffbc4eb689c955d042090dd177892e7f9859cc2c7c"
+    },
+    {
+      "path": "traces/sympy__sympy-17139.jsonl",
+      "bytes": 2213,
+      "sha256": "a473329e771ca259df05e0a714e5a45030769e3ff79d4f6ec3b4fd475aca1bb6"
+    },
+    {
+      "path": "traces/sympy__sympy-17630.jsonl",
+      "bytes": 2269,
+      "sha256": "9948d7e409cb57bd59d6362c8db96720f106f6823047f9cfc2cb84ce78e79ae1"
+    },
+    {
+      "path": "traces/sympy__sympy-17655.jsonl",
+      "bytes": 2218,
+      "sha256": "8adcf3120f723c4074c6034ad8c2d6fc2ffc5825c1a35c899018f4469a79c003"
+    },
+    {
+      "path": "traces/sympy__sympy-18087.jsonl",
+      "bytes": 2218,
+      "sha256": "59ed9fbe57565642253e436283832366d485f20af5b9eaaae91584a8c7e28a48"
+    },
+    {
+      "path": "traces/sympy__sympy-18532.jsonl",
+      "bytes": 2215,
+      "sha256": "bda64e5ba80803776e5bf9e9f74299912682b0e1856ab2decda18bdcdef03fcd"
+    },
+    {
+      "path": "traces/sympy__sympy-18835.jsonl",
+      "bytes": 1804,
+      "sha256": "38b87d4f72011d5cc536234a79262462ca3f9b01f4d3fafa729ff80cd08e6bd5"
+    },
+    {
+      "path": "traces/sympy__sympy-19487.jsonl",
+      "bytes": 2145,
+      "sha256": "4bedb6b2483192bbae53d9d34a5fbbef0890aac6be3e6dd9fe65636ddbeb734e"
+    },
+    {
+      "path": "traces/sympy__sympy-20049.jsonl",
+      "bytes": 2133,
+      "sha256": "7562a9606b9ce38ddec0f5952f2d3233ce5c508bd66072254250deea313dcafd"
+    },
+    {
+      "path": "traces/sympy__sympy-20154.jsonl",
+      "bytes": 2238,
+      "sha256": "167535a191f8f3611e8346a942e2d6e563489e7d8d985bceae329fa1f1bddde2"
+    },
+    {
+      "path": "traces/sympy__sympy-21055.jsonl",
+      "bytes": 2231,
+      "sha256": "6fa052cc34cedc662199da791858821b46482c367c02d51bfe8169f51d01c433"
+    },
+    {
+      "path": "traces/sympy__sympy-21612.jsonl",
+      "bytes": 2224,
+      "sha256": "7d74704c49199b4fc7e817468df4c9c0f514226e11413b897dca57bfd5ff3ec4"
+    },
+    {
+      "path": "traces/sympy__sympy-22005.jsonl",
+      "bytes": 2224,
+      "sha256": "9670f1d823c4835e7b617d01b346fa6f448f3ebb685a0c8e6c8f44afee19c329"
+    },
+    {
+      "path": "traces/sympy__sympy-22714.jsonl",
+      "bytes": 2224,
+      "sha256": "c96b0c6eba1ae4276f5942dd08d6575949453c290b85ff3af87754f68cc9f39f"
+    },
+    {
+      "path": "traces/sympy__sympy-23262.jsonl",
+      "bytes": 2110,
+      "sha256": "0554ec27bf7e5bd3e37fca7e7c95081eda44af43c1180bfb73da2be8da53ed4e"
+    }
+  ],
+  "proves": "These exact result files existed when this manifest was published and have not changed since.",
+  "does_not_prove": "That a particular machine executed the run; this is a record of published results, not an execution attestation."
+}
